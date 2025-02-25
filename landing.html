@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio R&B</title>
+    <link rel="shortcut icon" href="./imagenes/icono.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo">
+                <img src="./imagenes/logo.jpg" alt="logo">
+            </a>
+            <input type="checkbox" id="menu">
+            <label for="menu" class="menu-icon">
+                <img src="./imagenes/menu.png" alt="menu-icono">
+            </label>
+            <div class="carrito">
+                <button onclick="abrirmodal()"><i class="material-symbols-outlined carrito-icon"> shopping_cart </i></button>
+                <span id="cartCount"> 0 </span>
+
+                <div class="cart" id="cart">
+                    <div class="cart-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contentProducts">
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" class="total">
+                                        <h4 class="heading-total">Total: <span id="total">0</span></h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <button type="button" id="emptyCart">Vaciar carrito</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <button type="button" id="cerrar" onclick="cerrarModal()">Cerrar</button>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#estudios">Estudios</a></li>
+                    <li><a href="#ubicaciones">Ubícanos</a></li>
+                    <li><a href="#contacto">Contactanos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="images">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./imagenes/carousel_1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./imagenes/carousel_2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./imagenes/carousel_3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rows">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="seccion" id="estudios">
+        <h1>Estudios</h1>
+    
+        <!-- Swiper Contenedor -->
+        <div class="stds">
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper" id="cards-container">
+                    <!-- Aquí se agregarán dinámicamente las tarjetas -->
+                </div>
+        
+                <!-- Flechas de navegación -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seccion" id="ubicaciones">
+        <h1>Ubícanos</h1>
+        <div class="subseccion">
+            <h2>Villanueva</h2>
+            <div class="contenido-subseccion">
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d922.497073873517!2d-102.88582373039!3d22.35407079872801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8682893a8f1795a1%3A0x9b5d05866cb7f04a!2sLaboratorio%20R%20%26%20B%20de%20an%C3%A1lisis%20cl%C3%ADnicos!5e0!3m2!1ses-419!2smx!4v1740095448979!5m2!1ses-419!2smx" 
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                <div class="horario">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Apertura</th>
+                                <th>Cierre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Lunes</td><td>8:00 AM</td><td>4:00 PM</td></tr>
+                            <tr><td>Martes</td><td>8:00 AM</td><td>4:00 PM</td></tr>
+                            <tr><td>Miércoles</td><td>8:00 AM</td><td>4:00 PM</td></tr>
+                            <tr><td>Jueves</td><td>8:00 AM</td><td>4:00 PM</td></tr>
+                            <tr><td>Viernes</td><td>8:00 AM</td><td>4:00 PM</td></tr>
+                            <tr><td>Sábado</td><td>8:00 AM</td><td>4:00 PM</td></tr>
+                            <tr><td>Domingo</td><td colspan="2" style="text-align: center;">Cerrado</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>        
+        <div class="subseccion">
+            <h2>Zacatecas</h2>
+            <div class="contenido-subseccion placeholder">
+                <img src="./imagenes/domicilio.png" alt="Place holder">
+                <div class="domicilio">
+                    <h3>Toma de muestras a domicilio</h3>
+                <p>Para tu comodidad, ofrecemos servicio de toma de muestras a domicilio. Nuestro equipo capacitado se encargará de realizar el procedimiento con profesionalismo y seguridad en la comodidad de tu hogar. Contáctanos para agendar tu cita sin salir de casa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seccion" id="contacto">
+        <h1>Contactanos</h1>
+        <div class="social-container">
+            <div class="col-redes">
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i><span>Laboratorio de Análisis Clínicos R&B</span></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i><span>@Laboratorio de Análisis Clínicos R&B</span></a>
+            </div>
+            <div class="col-redes">
+                <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i><span>Laboratorio de Análisis Clínicos R&B</span></a>
+                <a href="#" class="social-icon telefono"><i class="fa-solid fa-phone"></i><span>Laboratorio de Análisis Clínicos R&B</span></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
