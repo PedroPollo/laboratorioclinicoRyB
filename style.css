@@ -651,9 +651,9 @@ body {
     }
 
     .mapa iframe {
-        width: 110%;
-        max-width: 400px;
-        height: auto;
+        width: 100%;
+        max-width: 1000px;
+        height: 300px;
     }
 
     .placeholder {
