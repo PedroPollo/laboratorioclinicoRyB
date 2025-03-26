@@ -273,11 +273,14 @@ body {
 
 .swiper-slide img {
     display: block;
-    width: 600px;
+    max-width: 100%; /* No supera el ancho del contenedor */
+    max-height: 100%; /* No supera la altura del contenedor */
+    width: auto;
     height: auto;
-    object-fit: cover;
+    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
     border-radius: 15px;
 }
+
 
 /* Secciones */
 .seccion h1 {
@@ -359,6 +362,7 @@ body {
 }
 
 .domicilio p {
+    text-align: justify;
     padding: 10px;
     font-family: 'Inter', serif;
     font-size: 16;
@@ -423,13 +427,22 @@ body {
     color: white;
 }
 
-.social-icon.tiktok:hover {
-    background-color: #010101;
+.social-icon.phone:hover {
+    background-color: #25D366;
     color: white;
 }
 
-.social-icon.telefono:hover {
-    background-color: green;
+.social-icon.whatsapp {
+    background-color: white;
+}
+
+.social-icon.whatsapp:hover {
+    background-color: #25D366;
+    color: white;
+}
+
+.social-icon.email:hover {
+    background-color: #D44638;
     color: white;
 }
 
@@ -743,5 +756,17 @@ body {
 @media screen and (max-width: 600px) {
     .wrapper .carousel {
         grid-auto-columns: 100%;
+    }
+
+    .social-container {
+        flex-direction: column;
+        align-items: center; /* Centra los elementos */
+        gap: 10px; /* Reduce el espacio entre los elementos */
+    }
+
+    .social-icon {
+        width: 100%; /* Opcional: Para que ocupen todo el ancho disponible */
+        text-align: center; /* Centra el texto dentro de los botones */
+        padding: 15px;
     }
 }
